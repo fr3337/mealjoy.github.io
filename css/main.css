@@ -1,0 +1,592 @@
+html {
+    box-sizing: border-box;
+}
+*:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    background: #fff;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.navbar-nav {
+    list-style: none;
+    display: flex;
+}
+.nav-item {
+    padding: 0 20px;
+}
+.nav-link {
+    text-decoration: none;
+    color: #e5e5e5;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    position: relative;
+}
+.nav-link:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(61, 113, 255);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+.nav-link:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+.active {
+    font-weight: 900;
+    color: #000000;
+}
+.navbar-brand {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    line-height: 22px;
+}
+.navbar-brand:hover {
+    font-weight: bolder!important;
+}
+
+.container {
+    margin-top: 30px;
+}
+.header {
+    text-align: center;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 57px;
+    letter-spacing: 0 em;
+}
+.about {
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.48);
+}
+.bg-img {
+    background: url(../img/intro/bg.png) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 491.43px;
+    position: relative;
+}
+.btn {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 606px;
+    top: 60px;
+    outline: none;
+    border: none;
+    background: #52B030;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 0px 6px 16px rgba(38, 87, 20, 0.56);
+    cursor: pointer;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.menu {
+    padding: 0 150px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 130.5%;
+    text-align: center;
+    color: #2C2A26;
+}
+
+.menu-bar-nav {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+.menu-item {
+    padding: 0 40px;
+}
+.menu-item span {
+    color: #52B030;
+}
+.menu-link {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 130.5%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.28);
+    text-decoration: none;
+    position: relative;
+}
+.actived {
+    color: #52B030;
+}
+.menu-link:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(61, 113, 255);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+.menu-link:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+/* 
+                            ////////////
+                            /          /
+                            / Carousel /
+                            ////////////
+ */
+
+.mySlides1, .mySlides2 {
+     display: none
+}
+img {
+      vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 70px;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.card {
+    height: 400px;
+    width: 300px;
+    /* border: 1px solid; */
+    text-align: center;
+    margin-right: 45px;
+    /* background-color: #F9F9FA; */
+    padding: 10px;
+    border-radius: 20px;
+}
+.card img {
+    border-radius: 20px;
+    background-color: green!important;
+}
+.card .name_food {
+    margin-top: -65px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130.5%;
+/* or 23px */
+
+text-align: center;
+
+color: rgba(0, 0, 0, 0.49);
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #F0F2F3;
+  border-radius: 50%!important;
+  color: #969AA7;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+}
+.prev {
+    left: -50px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 17px rgba(0, 0, 0, 0.17);
+}
+
+.freezing {
+    /* border: 1px solid; */
+    position: relative;
+    margin: 200px 0;
+}
+.col-8 {
+    position: absolute;
+    right: 100px;
+    top: 30px;
+}
+.col-4 {
+    position: absolute;
+    /* border: 1px solid lightblue; */
+    width: 480.5px;
+    height: 333.52px;
+    left: 215.9px;
+    top: -30px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 29px rgba(0, 0, 0, 0.09);
+    border-radius: 7px
+}
+.col-4 .one {
+    width: 44px;
+    height: 94px;
+    margin-left: 35px;
+    margin-top: 5px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    text-transform: uppercase;
+    color: rgba(95, 193, 236, 0.2);
+}
+.col-4 .start-freezing {
+    width: 258px;
+    height: 90px;
+    margin-left: 35px;
+    margin-top: -75px!important;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 125%;
+    text-transform: uppercase;
+    color: #5FC1EC;
+}
+.col-4 .about-freezing {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140.5%;
+    color: #3B372F;
+    margin-left: 35px;
+    padding-right: 45px;
+}
+
+.year-round {
+    margin-top: 900px;
+    /* border: 1px solid; */
+    position: relative;
+    margin-bottom: 200px;
+}
+.year-round .col-6 {
+    position: absolute;
+    /* border: 1px solid; */
+    left: 100px;
+    top: 30px;
+    width: 700px;
+}
+.year-round .col-6 img {
+    border-radius: 5px;
+    width: 100%;
+}
+.year-round .col-5 {
+    position: absolute;
+    width: 480.5px;
+    height: 333.52px;
+    top: -20px;
+    right: 100px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 29px rgba(0, 0, 0, 0.09);
+    border-radius: 7px;
+}
+.col-5 .two {
+    margin-left: 45px;
+    margin-top: 5px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 130.5%;
+    text-transform: uppercase;
+    color: rgba(116, 193, 40, 0.3);
+}
+.col-5 .start-freezing {
+    width: 258px;
+    height: 90px;
+    margin-left: 45px;
+    margin-top: -75px!important;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 125%;
+    text-transform: uppercase;
+    color: #5FC1EC;
+}
+.col-5 .about-freezing {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140.5%;
+    color: #3B372F;
+    margin-left: 45px;
+    padding-right: 45px;
+}
+
+.container .quick-cook {
+    margin-top: 1700px;
+    position: relative;
+    /* border: 1px solid; */
+}
+.quick-cook .col-1 {
+    position: absolute;
+    left: 100px;
+    width: 480.5px;
+    height: 333.52px;
+    top: -30px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 29px rgba(0, 0, 0, 0.09);
+    border-radius: 7px;
+    z-index: 1;
+
+}
+.col-1 .three {
+    margin-left: 45px;
+    margin-top: 10px;
+    width: 44px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 130.5%;
+    text-transform: uppercase;
+    color: rgba(244, 172, 12, 0.2);
+}
+.col-1 .start-freezing {
+    margin-left: 45px;
+    margin-top: -65px!important;
+    width: 417px;
+    height: 83px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 125%;
+    text-transform: uppercase;
+    color: #F4AC0C;
+}
+.col-1 .about-freezing {
+    width: 382px;
+    height: 66px;
+    margin-left: 45px;
+    margin-top: -15px!important;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140.5%;
+    color: #3B372F
+}
+.quick-cook .col-2 {
+    position: absolute;
+    right: 100px;
+    width: 700px;
+}
+.col-2 img {
+    width: 100%;
+}
+
+.checkout {
+    margin-top: 2300px;
+    text-align: center!important;
+    margin-bottom: 150px;
+}
+.checkout p {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 130.5%;
+    color: #2C2A26;
+}
+.checkout button {
+    border: none;
+    width: 229px;
+    height: 60px;
+    background: #52B030;
+    box-shadow: 0px 10px 20px rgba(38, 87, 20, 0.19);
+    border-radius: 50px;
+    text-decoration: none!important;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    outline: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.checkout .glass {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 130.5%;
+    color: rgba(0, 0, 0, 0.33);
+}
+
+footer {
+    background: #C5E9F8;
+    padding: 30px 45px;
+    height: 140px;
+    position: relative;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    transition: all 4s linear;
+}
+.footer ul {
+    list-style: none;
+}
+.footer ul li a {
+    text-decoration: none;
+}
+.footer ul li a:hover {
+    /* color: #fff; */
+    text-decoration: underline;
+}
+.contact, .abouts {
+    padding-bottom: 20px;
+}
+.contact a, .abouts a {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #3495BF;
+}
+.phone, .user, .mail, .pay {
+    padding-bottom: 10px;
+}
+.phone a, .user a, .mail a, .pay a {
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: #3495BF;
+}
+.fol {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+.follow {
+    position: relative;
+}
+.following a{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 2px;
+    color: #3495BF;
+}
+.fol-mail, .subscribe {
+    position: absolute;
+    top: 20px;
+    text-decoration: none;
+}
+.fol-mail {
+    position: absolute;
+    left: 0;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #3495BF;
+    border: 1px solid #3495BF;
+    box-sizing: border-box;
+    border-radius: 50px;
+    padding: 8px 180px 8px 10px;
+}
+.subscribe {
+    right: 0;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #3495BF;
+    background: #FFFFFF;
+    border-radius: 50px;
+    padding: 10px;
+}
+.social-networks {
+    position: absolute;
+    top: 90px;;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: #3495BF!important;
+}
+.social-networks a {
+    color: #3495BF;
+    font-size: 14px;
+    text-decoration: none;
+}
+.mealjoy {
+    margin-left: 30px;
+    position: absolute;
+    top: 170px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(52, 149, 191, 0.61);
+
+}
